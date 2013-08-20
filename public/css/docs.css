@@ -1,0 +1,257 @@
+/* Top nav and header
+-------------------------------------------------- */
+
+.bs-docs-nav {
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+.bs-docs-nav .navbar-collapse {
+  border-color: #5cb85c;
+}
+.bs-docs-nav .navbar-brand {
+  color: #fff;
+}
+.bs-docs-nav .navbar-nav > li > a {
+  color: #d5f2cc;
+}
+.bs-docs-nav .navbar-nav > li > a:hover {
+  color: #fff;
+}
+.bs-docs-nav .navbar-nav > .active > a,
+.bs-docs-nav .navbar-nav > .active > a:hover {
+  color: #fff;
+  background-color: #5cb85c;
+}
+.bs-docs-nav .navbar-toggle {
+  border-color: #5cb85c;
+}
+.bs-docs-nav .navbar-toggle:hover {
+  background-color: #4cae4c;
+  border-color: #4cae4c;
+}
+
+/* Side notes for calling out things
+-------------------------------------------------- */
+
+/* Base styles (regardless of theme) */
+.bs-callout {
+    margin: 20px 0;
+    padding: 15px 30px 15px 15px;
+    border-left: 5px solid #eee;
+}
+.bs-callout h4 {
+    margin-top: 0;
+}
+.bs-callout p:last-child {
+    margin-bottom: 0;
+}
+.bs-callout code,
+.bs-callout .highlight {
+    background-color: #fff;
+}
+
+/* Themes for different contexts */
+.bs-callout-danger {
+    background-color: #fcf2f2;
+    border-color: #dFb5b4;
+}
+.bs-callout-warning {
+    background-color: #fefbed;
+    border-color: #f1e7bc;
+}
+.bs-callout-info {
+    background-color: #f0f7fd;
+    border-color: #d0e3f0;
+}
+
+/* ListView */
+.listview.grid-layout {
+    padding: 2px;
+    overflow-y: auto;
+}
+
+.listview.grid-layout .listview-item {
+    margin-right: 10px;
+}
+
+.listview.list-layout {
+    width: 330px;
+    padding: 2px;
+    overflow-y: auto;
+}
+
+.listview.list-layout.big {
+    width: 430px;
+}
+
+.listview-item {
+    position: relative;
+    display: inline-block;
+    width: 274px;
+    min-height: 60px;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 7px;
+    overflow: hidden;
+    *overflow: visible;
+    color: #ffffff;
+    text-shadow: none;
+    vertical-align: top;
+    border: solid 3px transparent;
+    zoom: 1;
+}
+
+.listview-item:hover {
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+    border: solid 3px #225a68;
+}
+
+.listview-item.selected {
+    border: 3px solid #003484;
+}
+
+.listview-item.selected:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1001;
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 40px solid #003484;
+    border-left: 40px solid transparent;
+    content: "";
+}
+
+.listview-item.selected:before {
+    position: absolute;
+    top: 0;
+    right: 4px;
+    z-index: 1002;
+    font-family: 'icomoon';
+    color: #FFFFFF;
+    content: "\e379";
+}
+
+.listview-item-body {
+    overflow: hidden;
+    *overflow: visible;
+    zoom: 1;
+}
+
+.listview-item-body p {
+    height: 20px;
+    margin: 0;
+    overflow: hidden;
+    line-height: 20px;
+    text-overflow: ellipsis;
+}
+
+.listview-item-body p.two-lines {
+    height: 40px;
+    line-height: 20px;
+}
+
+.listview-item-body p.three-lines {
+    height: 60px;
+    line-height: 20px;
+}
+
+.listview-item-object {
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+}
+
+.listview-item-object[class*="icon-"] {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    font-size: 60px;
+    line-height: 60px;
+}
+
+.listview-item-heading {
+    margin: 0 0 5px;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.listview-item-subheading {
+    margin: 0 0 5px;
+    margin: 0;
+    overflow: hidden;
+    color: #eeeeee;
+    text-overflow: ellipsis;
+}
+
+.listview-item.big {
+    width: 380px;
+}
+
+.listview-item.big .listview-item-object {
+    display: block;
+    width: 112px;
+    height: 112px;
+    margin-right: 10px;
+}
+
+.listview-item.big .listview-item-object[class*="icon-"] {
+    display: inline-block;
+    width: 112px;
+    height: 112px;
+    font-size: 112px;
+    line-height: 112px;
+}
+
+.bg-color-orange {
+    background-color: #f09609 !important;
+}
+
+.bg-color-purple {
+    background-color: #7b4f9d !important;
+}
+
+.bg-color-greenDark {
+    background-color: #008641 !important;
+}
+
+.bg-color-blue {
+    background-color: #2e8bcc !important;
+}
+
+.bg-color-red {
+    background-color: #e51400 !important;
+}
+
+.bg-color-green {
+    background-color: #339933 !important;
+}
+
+.bg-color-blueDark {
+    background-color: #20608e !important;
+}
+
+.bg-color-yellow {
+    background-color: #ffc40d !important;
+}
+
+.bg-color-pink {
+    background-color: #e671b8 !important;
+}
+
+.bg-color-darken {
+    background-color: #1c1c1c !important;
+}
+
+.bg-color-gray {
+    background-color: #555555 !important;
+}
+
+.bg-color-grayLight {
+    background-color: #999999 !important;
+}
