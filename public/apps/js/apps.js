@@ -5,13 +5,14 @@ var app = {
     ajax: function(url, params, cb){
         try{
             $.ajax({
-                url: site_url +  '/' + url,
-                type: 'POST',
-                dataType: 'json',
+                url         : site_url +  '/' + url,
+                type        : 'POST',
+                timeout     : 50000,
+                dataType    : 'json',
 
-                data: params,
+                data        : params,
 
-                success: function(data){
+                success     : function(data){
                     if(data.success){
                         if(data){
                             cb(null, data);
@@ -22,7 +23,7 @@ var app = {
                         cb(data.msg, null);
                     }
                 },
-                error: function(xhr, status){
+                error       : function(xhr, status){
                     cb('Error:  [' + xhr.status + '] ' + xhr.statusText, null);
                 }
             });
@@ -41,6 +42,25 @@ var app = {
     isValidEmailAddress: function(emailAddress) {
         var pattern = new RegExp(/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i);
         return pattern.test(emailAddress);
+    },
+    convertDateRangeToThai: function(dateRange) {
+        var d1 = dateRange.substr(0, 10);
+        var d2 = dateRange.substr(-10);
+
+        return app.convertDateToThai(d1) + ' ถึงวันที่ ' + app.convertDateToThai(d2);
+    },
+    convertDateToThai: function(_date) {
+        var _y, _m, _d;
+        _y = parseInt(_date.substr(0, 4));
+        _y += 543;
+        _d = _date.substr(8);
+        _m = _date.substr(5, 2);
+
+        return _d + ' ' + app.get_month(_m) +' '+ _y;
+    },
+    get_month: function(_m) {
+        var tmp_m = [ 'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม' ];
+        return tmp_m[--_m];
     }
 };
 

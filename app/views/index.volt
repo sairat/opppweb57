@@ -4,15 +4,15 @@
     <meta charset="utf-8">
     {{ get_title() }}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="OP-PP Individual">
+    <meta name="description" content="OP-PP Individual Center">
     <meta name="author" content="Mr.Utit Sairat">
 
     <!-- Favicons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
-    <link rel="shortcut icon" href="ico/favicon.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ url('ico/apple-touch-icon-144-precomposed.png') }}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ url('ico/apple-touch-icon-114-precomposed.png') }}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ url('ico/apple-touch-icon-72-precomposed.png') }}">
+    <link rel="apple-touch-icon-precomposed" href="{{ url('ico/apple-touch-icon-57-precomposed.png') }}">
+    <link rel="shortcut icon" href="{{ url('ico/favicon.png') }}">
 
     {{ stylesheet_link(["href": url('css/bootstrap.min.css')]) }}
     {{ stylesheet_link(["href": url('css/docs.css')]) }}

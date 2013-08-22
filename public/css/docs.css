@@ -255,3 +255,77 @@
 .bg-color-grayLight {
     background-color: #999999 !important;
 }
+
+
+
+/* It's easier to calculate widths
+ * with border-box layout */
+.customfile-container * {
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    font: normal 14px Arial, sans-serif; /* Global font to use ems with precision */
+}
+
+.customfile-container {
+    width: 300px;
+    background: #FFF2B8;
+    padding: 1em;
+}
+
+.customfile-container label:first-child {
+    width: 100px;
+    display: block;
+    margin-bottom: .5em;
+    font: bold 18px Arial, sans-serif;
+    color: #333;
+}
+
+.customfile-wrap {
+    position: relative;
+    padding: 0;
+    margin-bottom: .5em;
+}
+
+.customfile-filename,
+.customfile-upload {
+    margin: 0;
+    padding: 0;
+}
+
+.customfile-filename {
+    width: 230px;
+    padding: .4em .5em;
+    border: 1px solid #A8A49D;
+    border-radius: 2px 0 0 2px;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
+}
+.customfile-filename:focus {
+    outline: none;
+}
+
+.customfile-upload {
+    display: inline-block;
+    width: 70px;
+    padding: .4em 1em;
+    border: 1px solid #A8A49D;
+    color: #6B6863;
+    background: #ddd;
+    border-radius: 0 2px 2px 0;
+    margin-left: -1px; /* align with input */
+    cursor: pointer;
+    background: #fcfff4;
+    background: -moz-linear-gradient(top, #fcfff4 0%, #e9e9ce 100%);
+    background: -webkit-linear-gradient(top, #fcfff4 0%, #e9e9ce 100%);
+    background: -o-linear-gradient(top, #fcfff4 0%, #e9e9ce 100%);
+    background: -ms-linear-gradient(top, #fcfff4 0%, #e9e9ce 100%);
+    background: linear-gradient(to bottom, #fcfff4 0%, #e9e9ce 100%);
+}
+
+.customfile-upload:hover {
+    background: #fafafa;
+    box-shadow: 0 0 2px rgba(0,0,0,.2);
+}
+.customfile-upload::-moz-focus-inner { /* Fix firefox padding */
+    padding: 0; border: 0
+}

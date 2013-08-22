@@ -11,7 +11,7 @@ $(function() {
                 if(data != null && _.size(data.rows) > 0) {
                     _.each(data.rows, function(v) {
                         $('#lstMain').append(
-                            '<a class="listview-item '+ v.sem_color +'" href="'+ v.sem_url +'/'+ v.sem_folder +'">'+
+                            '<a class="listview-item '+ v.sem_color +'" href="'+ site_url + '/' + v.sem_url +'/'+ v.sem_folder +'">'+
                                 '<div class="pull-left">'+
                             '<div class="listview-item-object '+ v.sem_icon +'"></div>'+
                             '</div>'+
