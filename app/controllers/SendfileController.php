@@ -38,9 +38,33 @@ class SendfileController extends ControllerBase
         $this->view->pick('sendfile/week');
     }
 
+    public function monthAction($opt) {
+        $phql = "SELECT u.usr_id, u.usr_hospital, h.HNAME FROM TbUsers as u LEFT JOIN TbHospital as h ON u.usr_hospital=h.HMAIN WHERE u.usr_id=:usrid: LIMIT 1";
+        $data = $this->modelsManager->executeQuery($phql, array(
+            'usrid' => $this->session->get('usr_id')
+        ));
+        $url = new Phalcon\Mvc\Url();
+        $this->view->setVar('posts', $data[0]);
+        $this->view->setVar('opt', $opt);
+        $this->view->pick('sendfile/month');
+    }
+
     public function optionAction($opt) {
         $this->view->setVar('opt', $opt);
         $this->view->pick('sendfile/option');
+    }
+
+    public function chk_file_duplicateAction() {
+        $this->view->disable();
+        $file = $this->request->getPost('file');
+        $rs = TbSendFile::find(array("sf_filename='".$file."' AND sf_hospital='".$this->session->get('usr_hospital')."'"));
+        if(count($rs)) {
+            $json = '{ "success": true, "msg": "ไฟล์ซ้ำ" }';
+        } else {
+            $json = '{ "success": false, "msg": "ยังไม่มีไฟล์นี้" }';
+        }
+        $render = new Basics();
+        $render->render_json($json);
     }
 
     public function set_upload_weekAction() {
@@ -85,13 +109,13 @@ class SendfileController extends ControllerBase
                     'usrid'      => $id,
                     'date_data'  => $date
                 ));
-                $json = '{ "success": true, "msg":"Ok -> '.$file_name.'" }';
+                echo 'อับโหลดไฟล์เสร็จสมบูรณ์  รอ 5 นาที หรือ <a href="../sendfile">คลิกที่นี่</a>';
+                echo '<META HTTP-EQUIV="REFRESH" CONTENT="5;URL=../sendfile">';
             } else {
-                $json = '{ "success": false, "msg": "No send file->'.$file.'" }';
+                echo 'การอับโหลดไฟล์ผิดพลาด  รอ 5 นาที หรือ <a href="../sendfile">คลิกที่นี่</a>';
             }
-
-            $render = new Basics();
-            $render->render_json($json);
+//            $render = new Basics();
+//            $render->render_json($json);
         }
     }
 }

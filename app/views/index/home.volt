@@ -10,7 +10,7 @@
 </ul>
 
 <div class="row">
-    <div class="col-lg-9">
+    <div class="col-md-9">
         <div class="panel panel-info">
             <div class="panel-heading">
                 <h3 class="panel-title">Panel title</h3>
@@ -20,7 +20,7 @@
             </div>
         </div>
     </div>
-    <div class="col-lg-3">
+    <div class="col-md-3">
         <div class="panel panel-danger">
             <div class="panel-heading">
                 <h3 class="panel-title">Panel title</h3>
@@ -32,7 +32,7 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-lg-12">
+    <div class="col-md-12">
         <div class="panel panel-primary">
             <div class="panel-heading">
                 <h3 class="panel-title">Panel title</h3>

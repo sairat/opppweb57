@@ -36,6 +36,7 @@ class IndexController extends ControllerBase
                     $this->session->set('usr_id', $rs[0]->usr_id);
                     $this->session->set('usr_uid', $rs[0]->usr_uid);
                     $this->session->set('usr_name', $rs[0]->usr_name);
+                    $this->session->set('usr_hospital', $rs[0]->usr_hospital);
 
                     $json = '{ "success": true, "msg": "ยินดีต้อนรับ" }';
                 } else {

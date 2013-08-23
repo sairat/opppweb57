@@ -31,7 +31,17 @@ $(function() {
             if($('#tboFile').val() == '') {
                 app.alert('กรุณากรอกข้อมูลให้ครบด้วย !');
             } else {
-                $('#frmMain').submit();
+                app.ajax('sendfile/chk_file_duplicate', { file: $('#tboFile').val() }, function(err, data) {
+                    if(data != null) {
+                        if(data.success) {
+                            app.alert('ไฟล์นี้เคยอับโหลดขึ้นแล้ว ! หากต้องการนำเข้าใหม่ให้ติดต่อผู้ดูแลให้ลบออกให้ก่อน');
+                        } else {
+                            $('#frmMain').submit();
+                        }
+                    } else {
+                        $('#frmMain').submit();
+                    }
+                });
             }
 
 //            var url = 'sendfile/set_upload_week',

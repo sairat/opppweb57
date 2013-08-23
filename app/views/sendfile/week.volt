@@ -6,6 +6,12 @@
  * Time: 13:44 น.
  */
 -->
+<ul class="breadcrumb">
+    <li><a href="{{ url() }}">หน้าหลัก</a></li>
+    <li><a href="{{ url('sendfile') }}">ส่งข้อมูล</a></li>
+    <li class="active">ตัวเลือกข้อมูล</li>
+</ul>
+
 <form action="{{ url('sendfile/set_upload_week') }}" method="post" enctype="multipart/form-data" id="frmMain">
     <input type="hidden" name="tboId" id="tboId" value="{{ posts.usr_id }}">
     <input type="hidden" name="tboPcu" id="tboPcu" value="{{ posts.usr_hospital }}">
