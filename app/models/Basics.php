@@ -13,4 +13,10 @@ class Basics extends \Phalcon\Mvc\Model {
 
         echo $json;
     }
+
+    public function str_format($val, $format) {
+        $val = $format.$val;
+
+        return substr($val, (strlen($val) - strlen($format)));
+    }
 }

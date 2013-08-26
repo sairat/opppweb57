@@ -27,13 +27,13 @@
             <div class="row">
                 <div class="col-md-offset-1 col-md-4">
                     <label class="control-label" for="cboMonth">เลือกเดือน</label>
-                    <select class="form-control" id="cboMonth">
+                    <select class="form-control" id="cboMonth" name="cboMonth">
                         <option value="">เลือกเดือน</option>
                     </select>
                 </div>
                 <div class="col-md-2">
                     <label class="control-label" for="cboYear">เลือกปี</label>
-                    <select class="form-control" id="cboYear">
+                    <select class="form-control" id="cboYear" name="cboYear">
                         <option value="">เลือกปี</option>
                     </select>
                 </div>
@@ -62,7 +62,7 @@
                     <label class="control-label">เลือกไฟล์</label>
                 </div>
                 <div class="col-md-8">
-                    <input type="file" name="tboFile" id="tboFile">
+                    <input type="file" name="tboFile[]" id="tboFile" multiple>
                 </div>
             </div>
         </div>
