@@ -34,7 +34,7 @@
     {{ content() }}
     <hr>
     <footer>
-        <p>&copy; Sairat 2013</p>
+        <a href="http://www.sairat.com" target="_blank"><p>&copy; Sairat 2013</p></a>
     </footer>
 </div>
 <script language="JavaScript">
