@@ -33,7 +33,13 @@ class TbSendFile extends \Phalcon\Mvc\Model
      * @var string
      */
     public $sf_hospital;
-     
+
+    /**
+     *
+     * @var string
+     */
+    public $sf_month;
+
     /**
      *
      * @var string
@@ -67,8 +73,9 @@ class TbSendFile extends \Phalcon\Mvc\Model
             'sf_date' => 'sf_date', 
             'sf_folder' => 'sf_folder', 
             'sf_type' => 'sf_type', 
-            'sf_hospital' => 'sf_hospital', 
-            'sf_filename' => 'sf_filename', 
+            'sf_hospital' => 'sf_hospital',
+            'sf_month' => 'sf_month',
+            'sf_filename' => 'sf_filename',
             'sf_usrid' => 'sf_usrid', 
             'sf_date_data' => 'sf_date_data', 
             'sf_status' => 'sf_status'
